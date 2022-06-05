@@ -34,3 +34,25 @@ const sessionUserIsPlayingKey = 'SESSION_USER_IS_PLAYING';
 //inisialisasi key untuk local storage
 const localTotalVictoryKey = 'LOCAL_TOTAL_VICTORIES_PLAYED';
 const localMaximumAttempsKey = 'LOCAL_MAXIMUM_ATTEMPTS';
+
+window.addEventListener('load', function() {
+    if (typeof(Storage) !== 'undefined') {
+        if (sessionStorage.getItem(sessionAnswerKey) === null) {
+            sessionStorage.setItem(sessionAnswerKey, '');
+        }
+        if (sessionStorage.getItem(sessionUserAttempsKey) === null) {
+            sessionStorage.setItem(sessionUserAttempsKey, 0);
+        }
+        if (sessionStorage.getItem(sessionUserIsPlayingKey) === null) {
+            sessionStorage.setItem(sessionUserIsPlayingKey, false);
+        }
+        if (localStorage.getItem(localMaximumAttempsKey) === null) {
+            localStorage.setItem(localMaximumAttempsKey, 0);
+        }
+        if (localStorage.getItem(localTotalVictoryKey) === 0) {
+            localStorage.setItem(localTotalVictoryKey, 0);
+        }
+    } else {
+        alert('Browser yang anda gunakan tidak mendukung web storage');
+    }
+});
