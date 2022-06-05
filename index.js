@@ -53,6 +53,6 @@ window.addEventListener('load', function() {
             localStorage.setItem(localTotalVictoryKey, 0);
         }
     } else {
-        alert('Browser yang anda gunakan tidak mendukung web storage');
+        alert();
     }
 });
