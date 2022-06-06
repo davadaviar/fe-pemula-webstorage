@@ -49,7 +49,7 @@ window.addEventListener('load', function() {
         if (localStorage.getItem(localMaximumAttempsKey) === null) {
             localStorage.setItem(localMaximumAttempsKey, 0);
         }
-        if (localStorage.getItem(localTotalVictoryKey) === 0) {
+        if (localStorage.getItem(localTotalVictoryKey) === null) {
             localStorage.setItem(localTotalVictoryKey, 0);
         }
     } else {
