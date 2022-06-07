@@ -78,7 +78,7 @@ answerButton1.addEventListener('click', function() {
 answerButton2.addEventListener('click', function() {
     sessionUserAnswerField.innerText += '2';
     if (sessionUserAnswerField.innerText == 3) {
-        checkAnswer.(sessionUserAnswerField.innerText);
+        checkAnswer(sessionUserAnswerField.innerText);
     }
 });
 
