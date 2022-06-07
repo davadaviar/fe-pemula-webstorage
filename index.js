@@ -115,6 +115,6 @@ function updateScore() {
     }
 
     const previousTotalVictoryAmount = parseInt(localStorage.getItem(localTotalVictoryKey));
-    localStorage.setItem(localTotalVictoryKey, previousAttempAmount + 1);
+    localStorage.setItem(localTotalVictoryKey, previousTotalVictoryAmount + 1);
     localTotalVictoryField.innerText = localStorage.getItem(localTotalVictoryKey);
 }
