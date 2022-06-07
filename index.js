@@ -88,3 +88,19 @@ answerButton3.addEventListener('click', function() {
         checkAnswer(sessionUserAnswerField.innerText);
     }
 });
+
+function checkAnswer(userGuess) {
+    const answer = sessionStorage.getItem(sessionAnswerKey);
+    if (userGuess == answer) {
+        duringGameDisplay.setAttribute('hidden', true);
+        afterGameDisplay.removeAttribute('hidden');
+        sessionTrueAnswerField.innerText = answer;
+        updateScore();
+    } else {
+        const previousAttempAmount = parseInt(sessionStorage.getItem(sessionUserAttempsKey));
+        sessionStorage.setItem(sessionUserAttempsKey, previousAttempAmount + 1);
+        sessionUserAttempsField.innerText = sessionStorage.getItem(sessionUserAttempsKey);
+        sessionUserAttempsField.innerText = '';
+        sessionUserWrongAnswerField.innerText = userGuess;
+    }
+}
