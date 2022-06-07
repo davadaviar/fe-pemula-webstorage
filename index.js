@@ -74,3 +74,17 @@ answerButton1.addEventListener('click', function() {
         checkAnswer(sessionUserAnswerField.innerText);
     }
 });
+
+answerButton2.addEventListener('click', function() {
+    sessionUserAnswerField.innerText += '2';
+    if (sessionUserAnswerField.innerText == 3) {
+        checkAnswer.(sessionUserAnswerField.innerText);
+    }
+});
+
+answerButton3.addEventListener('click', function() {
+    sessionUserAnswerField.innerText += '3';
+    if (sessionUserAnswerField.innerText == 3) {
+        checkAnswer(sessionUserAnswerField.innerText);
+    }
+});
