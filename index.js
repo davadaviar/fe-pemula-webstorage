@@ -118,3 +118,10 @@ function updateScore() {
     localStorage.setItem(localTotalVictoryKey, previousTotalVictoryAmount + 1);
     localTotalVictoryField.innerText = localStorage.getItem(localTotalVictoryKey);
 }
+
+window.addEventListener('beforeunload', function() {
+    sessionUserAnswerField.innerText = '';
+    sessionUserWrongAnswerField.innerText = '';
+    sessionStorage.setItem(sessionUserAttempsKey, 0);
+    sessionUserAttempsField.innerText = this.sessionStorage.getItem(sessionUserAttempsKey);
+})
