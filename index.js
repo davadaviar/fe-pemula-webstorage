@@ -104,3 +104,17 @@ function checkAnswer(userGuess) {
         sessionUserWrongAnswerField.innerText = userGuess;
     }
 }
+
+function updateScore() {
+    const sessionAttemptsValue = parseInt(sessionStorage.getItem(sessionUserAttempsKey));
+    const localAttemptsValue = parseInt(localStorage.getItem(localMaximumAttempsKey));
+
+    if (sessionAttemptsValue > localAttemptsValue) {
+        localStorage.setItem(sessionAttemptsValue, localAttemptsValue);
+        localMaximumAttempField.innerText = sessionAttemptsValue;
+    }
+
+    const previousTotalVictoryAmount = parseInt(localStorage.getItem(localTotalVictoryKey));
+    localStorage.setItem(localTotalVictoryKey, previousAttempAmount + 1);
+    localTotalVictoryField.innerText = localStorage.getItem(localTotalVictoryKey);
+}
