@@ -67,3 +67,10 @@ playButton.addEventListener('click', function() {
     beforeGameDisplay.setAttribute('hidden', true);
     duringGameDisplay.removeAttribute('hidden');
 });
+
+answerButton1.addEventListener('click', function() {
+    sessionUserAnswerField.innerText += '1';
+    if (sessionUserAnswerField.innerText == 3) {
+        checkAnswer(sessionUserAnswerField.innerText);
+    }
+});
