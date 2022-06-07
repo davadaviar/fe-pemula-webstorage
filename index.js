@@ -60,3 +60,10 @@ window.addEventListener('load', function() {
     localTotalVictoryField.innerText = localStorage.getItem(localTotalVictoryKey);
     localMaximumAttempField.innerText = localStorage.getItem(localMaximumAttempsKey);
 });
+
+playButton.addEventListener('click', function() {
+    sessionStorage.setItem(sessionAnswerKey,getAnswer());
+    sessionStorage.setItem(sessionUserIsPlayingKey, true);
+    beforeGameDisplay.setAttribute('hidden', true);
+    duringGameDisplay.removeAttribute('hidden');
+});
